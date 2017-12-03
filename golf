@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "size file " > golf.txt
+ls -l *.rb | awk {'print $5" "$9'} >> golf.txt
