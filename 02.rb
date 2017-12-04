@@ -1,5 +1,5 @@
-I = File.read('puzzles/02')
-v = I.split("\n").map { |e| e.split("\t").map(&:to_i) }
+I = File.readlines('p/02')
+v = I.map { |e| e.split("\t").map(&:to_i) }
 p v.map { |e| e.max - e.min }.sum
 w = []
 v.each do |a|
