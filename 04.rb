@@ -1,8 +1,4 @@
-I = File.readlines('p/04')
-v = I.map(&:split)
-w = I.map { |e| e.split.map { |f| f.split('') }.map(&:sort).map(&:join) }
-def c(v)
-  p v.count { |e| e.uniq.length == e.length }
-end
-c(v)
-c(w)
+I = File.readlines 'p/input04'
+c = ->(u) { u.uniq.length == u.length }
+p I.map(&:split).count(&c)
+p I.map { |e| e.split.map(&:chars).map(&:sort).map(&:join) }.count(&c)

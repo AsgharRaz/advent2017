@@ -1,4 +1,4 @@
-I = File.read('p/03').to_i
+I = File.read('p/input03').to_i
 def k(x, c = 8, i = 1)
   return { p: x, c: c, i: i } if c + 1 > x
   k(x - c, c + 8, i + 1)

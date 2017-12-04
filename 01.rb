@@ -1,4 +1,4 @@
-I = File.read('p/01').strip
+I = File.read('p/input01').strip
 v = I.split('').map(&:to_i)
 def sol(v, c)
   v.each_with_index.inject(0) do |a, (n, i)|

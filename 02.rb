@@ -1,4 +1,4 @@
-I = File.readlines('p/02')
+I = File.readlines('p/input02')
 v = I.map { |e| e.split("\t").map(&:to_i) }
 p v.map { |e| e.max - e.min }.sum
 w = []
