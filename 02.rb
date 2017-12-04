@@ -5,8 +5,8 @@ w = []
 v.each do |a|
   arr = a.sort.reverse
   arr.each do |e|
-    (arr.reject { |n| n == e }).each do |ie|
-      w << e / ie if (e % ie).zero?
+    (arr.reject { |n| n == e }).each do |r|
+      w << e / r if (e % r).zero?
     end
   end
 end

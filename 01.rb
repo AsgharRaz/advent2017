@@ -1,8 +1,8 @@
 I = File.read('puzzles/01').strip
 v = I.split('').map(&:to_i)
-def sol(v, inc)
+def sol(v, c)
   v.each_with_index.inject(0) do |a, (n, i)|
-    a + (n == v[(i + inc) % v.length] ? n : 0)
+    a + (n == v[(i + c) % v.length] ? n : 0)
   end
 end
 p sol(v, 1)
