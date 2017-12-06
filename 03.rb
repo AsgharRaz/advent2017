@@ -1,4 +1,4 @@
-I = File.read('p/input03').to_i
+i = File.read('p/input03').to_i
 def k(x, c = 8, i = 1)
   return { p: x, c: c, i: i } if c + 1 > x
   k(x - c, c + 8, i + 1)
@@ -23,12 +23,11 @@ def l(l, s = [[l, l - 1]])
   s
 end
 
-v = k(I - 1)
-p v[:i] + (v[:c] / 8 - v[:p] % (v[:c] / 4)).abs
+v = k(i - 1)
 n = [1]
-while I > n.last
-  n << n.each_with_index.inject(0) do |a, (e, i)|
-    a + (m(i + 1, n.length + 1) ? e : 0)
+while i > n.last
+  n << n.each_with_index.inject(0) do |a, (e, j)|
+    a + (m(j + 1, n.length + 1) ? e : 0)
   end
 end
-p n.last
+p v[:i] + (v[:c] / 8 - v[:p] % (v[:c] / 4)).abs, n.last
