@@ -1,16 +1,15 @@
 i = File.read('p/input07').split("\n")
 search = @progs = {}
 i.each do |e|
-  children = search.split(', ').map(&:to_sym) unless (search = e.gsub(/.*\> /,'')).split[0] == e.split[0]
+  children = search.split(', ').map(&:to_sym) unless (search = e.gsub(/.*\> /, '')).split[0] == e.split[0]
   @progs[e.split[0].to_sym] = {
     children: children,
-    weight: e.gsub(/.*\(/,'').gsub(/\).*/,'').to_i
+    weight: e.gsub(/.*\(/, '').gsub(/\).*/, '').to_i
   }
 end
 
-def weight(prog)
-  return @progs[prog][:weight] unless @progs[prog][:children]
-  @progs[prog][:weight] + @progs[prog][:children].map { |e| weight(e) }.inject(:+)
+def weight(prog, r = @progs[prog][:children] ? @progs[prog][:weight] + @progs[prog][:children].map { |e| weight(e) }.inject(:+) : @progs[prog][:weight])
+  r
 end
 
 def branch_info(prog)

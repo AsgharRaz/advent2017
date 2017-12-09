@@ -1,6 +1,6 @@
 i = File.read('p/input07').split("\n")
 s = @p = {}
-i.each { |e| @p[e.split[0].to_sym] = { c: (s.split(', ').map(&:to_sym) unless (s = e.gsub(/.*\> /,'')).split[0] == e.split[0]), w: e.gsub(/.*\(/,'').gsub(/\).*/,'').to_i } }
+i.each { |e| @p[e.split[0].to_sym] = { c: (s.split(', ').map(&:to_sym) unless (s = e.gsub(/.*\> /, '')).split[0] == e.split[0]), w: e.gsub(/.*\(/, '').gsub(/\).*/,'').to_i } }
 
 def w(p)
   return @p[p][:w] unless @p[p][:c]
