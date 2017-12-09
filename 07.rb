@@ -18,4 +18,4 @@ def u(p)
   u(d(p)[1])
 end
 
-p r = (@p.map { |k, v| k }.compact - @p.map { |k, v| v[:c] }.compact.flatten)[0], @p[u(r)][:w] + d(r)[0]
+p r = (@p.map { |k, _| k }.compact - @p.map { |_, v| v[:c] }.compact.flatten)[0], @p[u(r)][:w] + d(r)[0]
