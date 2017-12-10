@@ -5,8 +5,7 @@ a = *(0..255)
 f = t = s = 0
 64.times do
   j.each do |l|
-    next if l.zero?
-    t = (f + l - 1) % a.size
+    t = (f + l - (l.zero? ? 0 : 1)) % a.size
     if f <= t
       a[f..t] = a[f..t].reverse
     else
