@@ -1,8 +1,8 @@
-j = []
-i = File.read('p/input10').strip.each_byte { |c| j << c }
+i = File.read('p/input10').strip
+j = i.each_byte.map { |e| e }
 j += [17, 31, 73, 47, 23]
-v = *(0..255)
-def k(j, a, x = 64)
+def k(j, x = 64)
+  a = *(0..255)
   f = t = s = 0
   x.times do
     j.each do |l|
@@ -19,9 +19,6 @@ def k(j, a, x = 64)
   end
   a
 end
-b = k(i.split(',').map(&:to_i), v.clone, 1)
+b = k(i.split(',').map(&:to_i), 1)
 p b[0] * b[1]
-c = k(j, v)
-h = []
-c.each_slice(16) { |e| h << e.inject(:^).to_s(16) }
-p h.join
+p k(j).each_slice(16).map { |e| e.inject(:^).to_s(16) }.join
