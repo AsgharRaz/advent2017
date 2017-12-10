@@ -5,5 +5,9 @@ size file
 168 04.rb
 200 05.rb
 214 06.rb
-633 07.rb
-988 07_readable.rb
+635 07.rb
+986 07_readable.rb
+265 08.rb
+273 09.rb
+545 10.rb
+758 10_readable.rb
